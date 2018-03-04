@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {single, multi} from './data';
-import {DogDataService} from '../dog-data.service'
+import {DogDataService} from '../dog-data.service';
+import {NgxChartsModule} from '@swimlane/ngx-charts'
 
 @Component({
   selector: 'app-line-chart',
@@ -18,7 +19,7 @@ export class LineChartComponent implements OnInit {
 
   //Line chart
   showXAxis = true;
-  showYAxis = true;
+  showYAxis = false;
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
@@ -29,13 +30,30 @@ export class LineChartComponent implements OnInit {
   showLabels = true;
   explodeSlices = false;
   doughnut = false;
+  //Advanced Pies
+  label = "kg"
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#FE0500', '#4842B7', '#00B852', '#FE9200','#7F5345' ]
   };
+  //Tree
+  tooltipDisabled = false
+  min= 0
+  max= 100
+  angleSpan= 240
+  startAngle= -120
+  bigSegments= 10
+  smallSegments= 5
+
+  //gauge
 
   // line, area
   autoScale = true;
+
+
+
+
+
   constructor(private dogDataService: DogDataService) 
   {
     this.dogsPieData = dogDataService.getDogsPie();

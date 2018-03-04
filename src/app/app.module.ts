@@ -12,12 +12,14 @@ import { DogDataService } from './dog-data.service';
 
 
 import { AppComponent } from './app.component';
+import { CustomChartComponent } from './custom-chart/custom-chart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LineChartComponent
+    LineChartComponent,
+    CustomChartComponent
   ],
   imports: [
     BrowserModule,
